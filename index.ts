@@ -1,26 +1,15 @@
-class Server {
-	static VERSION = '1.0.3'
+interface UserInterface {
+	name: string
+	age: number
+	logInfo: () => void
+	id?: any
 
-	public name: string
-	protected ip: number
-
-	private status: string = 'working'
-
-	constructor(public name: string, protected ip: number) {
-		
-	}
-
-	public turnOn() {
-		this.status = 'working'
-	}
-
-	protected turnOff() {
-		this.status = 'offline'
-	}
-
-	public getStatus(): string {
-		return this.status
-	}
 }
 
-const server: Server = new Server('AWS', 1234 )
+const user: UserInterface = {
+	name: 'Alex',
+	age: 35,
+	logInfo() {
+		console.log(this.name + ' ' + this.age)
+	}
+}
